@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 from xgboost import XGBClassifier
@@ -357,6 +356,81 @@ section[data-testid="stSidebar"] hr {
         padding: 16px;
     }
 }
+
+/* Desktop only: bigger font sizes for sidebar, About page and forms */
+
+@media (min-width: 701px) {
+
+    /* Sidebar */
+    section[data-testid="stSidebar"] .side-title {
+        font-size: 34px !important;
+    }
+
+    section[data-testid="stSidebar"] .side-sub {
+        font-size: 15px !important;
+    }
+
+    section[data-testid="stSidebar"] div[role="radiogroup"] > label p {
+        font-size: 1.15rem !important;
+    }
+
+    section[data-testid="stSidebar"] .side-box {
+        height: auto !important;
+        min-height: 96px;
+        padding: 14px 16px !important;
+    }
+
+    section[data-testid="stSidebar"] .side-box-title {
+        font-size: 16px !important;
+    }
+
+    section[data-testid="stSidebar"] .side-box-text {
+        font-size: 14.5px !important;
+    }
+
+    section[data-testid="stSidebar"] .side-dev {
+        font-size: 13.5px !important;
+    }
+
+    /* About page */
+    .about-content {
+        font-size: 1.1rem;
+    }
+
+    .about-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .about-content h2 {
+        font-size: 1.7rem;
+    }
+
+    .note-box {
+        font-size: 1rem;
+    }
+
+    /* Forms */
+    div[data-testid="stForm"] [data-testid="stWidgetLabel"] p {
+        font-size: 1.1rem !important;
+    }
+
+    div[data-testid="stForm"] input {
+        font-size: 1.05rem !important;
+    }
+
+    div[data-testid="stForm"] div[data-baseweb="select"] div {
+        font-size: 1.05rem !important;
+    }
+
+    div[data-testid="stFormSubmitButton"] > button p {
+        font-size: 1.1rem !important;
+    }
+
+    div[data-baseweb="popover"] li {
+        font-size: 1.05rem !important;
+    }
+}
+
 </style>
 """
 
@@ -950,10 +1024,10 @@ def liver_page():
 st.sidebar.markdown(
     """
     <div style="text-align:center; padding:12px 5px 18px;">
-        <h1 style="font-size:28px; margin-bottom:4px; color:#FFFFFF;">
+        <h1 class="side-title" style="font-size:28px; margin-bottom:4px; color:#FFFFFF;">
             HealthScan
         </h1>
-        <p style="font-size:12px; color:#C9BDDE;">
+        <p class="side-sub" style="font-size:12px; color:#C9BDDE;">
             Smart Health Predictions
         </p>
     </div>
@@ -978,7 +1052,7 @@ st.sidebar.markdown("---")
 
 st.sidebar.markdown(
     """
-    <div style="
+    <div class="side-box" style="
         background:#302744;
         border:1px solid #514267;
         padding:0 14px;
@@ -991,10 +1065,10 @@ st.sidebar.markdown(
         flex-direction:column;
         justify-content:center;
     ">
-        <p style="font-size:13px; font-weight:700; margin:0 0 4px; color:#D6C1F5;">
+        <p class="side-box-title" style="font-size:13px; font-weight:700; margin:0 0 4px; color:#D6C1F5;">
             About HealthScan
         </p>
-        <p style="font-size:12px; color:#D0C7DF; line-height:1.5; margin:0;">
+        <p class="side-box-text" style="font-size:12px; color:#D0C7DF; line-height:1.5; margin:0;">
             An educational project for health risk awareness.
         </p>
     </div>
@@ -1004,7 +1078,7 @@ st.sidebar.markdown(
 
 st.sidebar.markdown(
     """
-    <p style="
+    <p class="side-dev" style="
         font-size:11px;
         color:#B3A9C7;
         text-align:center;
